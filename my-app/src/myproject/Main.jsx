@@ -108,8 +108,8 @@ function Main() {
          <h1 className='display-3 text-white animated slideInDown'>The Best Online</h1>
           <h1 >Learning Platform</h1>  
           <p>Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum <br /> et diam justo clita et kasd rebum sea sanctus eirmod elitr. </p>
-             <button className='Read-btn py-md-3 px-md-5 me-3 animated slideInLeft'>Read More</button>
-             <button className='Join-btn py-md-3 px-md-5 me-3 animated slideInRight'><Link to='/Contact'>Join Now</Link></button>
+             <button className='Read-btn py-md-3 px-md-5 me-3 animated slideInLeft'><Link to='/' className='carous-btnr'>Read More</Link></button>
+             <button className='Join-btn py-md-3 px-md-5 me-3 animated slideInRight'><Link to='/Contact' className='carous-btnj'>Join Now</Link></button>
        </div>
         </Carousel.Caption>
         </div>
@@ -123,8 +123,8 @@ function Main() {
           <h1 >Get Educated Online</h1>
           <h1 >From Your Home</h1>
           <p>Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum <br /> et diam justo clita et kasd rebum sea sanctus eirmod elitr. </p>
-             <button className='Read-btn py-md-3 px-md-5 me-3'>Read More</button>
-             <button className='Join-btn py-md-3 px-md-5 me-3'>Join Now</button>
+             <button className='Read-btn py-md-3 px-md-5 me-3'><Link to='/' className='carous-btnr'>Read More</Link></button>
+             <button className='Join-btn py-md-3 px-md-5 me-3'><Link to='/Contact' className='carous-btnj'>Join Now</Link></button>
         </Carousel.Caption>
         </div>
       </Carousel.Item>
@@ -271,7 +271,7 @@ function Main() {
         <div className="popular-course overflow-hidden"><Card.Img variant="top" src={Course1} text="Image cap" className='course-img position-relative'/></div>
       <div className='btn-sec w-100 position-absolute justify-content-center mb-4'>
       <Link to='/' className='card-btn1 flex-shrink-0 btn btn-sm btn-primary px-3 border-end'>Read More</Link>
-      <Link to='/' className='card-btn2 flex-shrink-0 btn btn-sm btn-primary px-3 border-start'>Join Now</Link>
+      <Link to='/Contact' className='card-btn2 flex-shrink-0 btn btn-sm btn-primary px-3 border-start'>Join Now</Link>
    </div>
         <h3 className='Dollar mb-0 mt-4' style={{fontWeight:"bold"}}>$149.00</h3>
           <div className='star mb-3'><FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
@@ -295,7 +295,7 @@ function Main() {
 <div className="popular-course overflow-hidden"><Card.Img variant="top" src={Course2} text="Image cap" className='course-img position-relative'/></div>
       <div className='btn-sec w-100 position-absolute justify-content-center mb-4'>
       <Link to='/' className='card-btn1 flex-shrink-0 btn btn-sm btn-primary px-3 border-end'>Read More</Link>
-      <Link to='/' className='card-btn2 flex-shrink-0 btn btn-sm btn-primary px-3 border-start'>Join Now</Link>
+      <Link to='/Contact' className='card-btn2 flex-shrink-0 btn btn-sm btn-primary px-3 border-start'>Join Now</Link>
    </div>
         <h3 className='Dollar mb-0 mt-4' style={{fontWeight:"bold"}}>$149.00</h3>
           <div className='star mb-3'><FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
@@ -320,7 +320,7 @@ function Main() {
  <div className="popular-course overflow-hidden"><Card.Img variant="top" src={Course3} text="Image cap" className='course-img position-relative'/></div>
       <div className='btn-sec w-100 position-absolute justify-content-center mb-4'>
       <Link to='/' className='card-btn1 flex-shrink-0 btn btn-sm btn-primary px-3 border-end'>Read More</Link>
-      <Link to='/' className='card-btn2 flex-shrink-0 btn btn-sm btn-primary px-3 border-start'>Join Now</Link>
+      <Link to='/Contact' className='card-btn2 flex-shrink-0 btn btn-sm btn-primary px-3 border-start'>Join Now</Link>
    </div>
         <h3 className='Dollar mb-0 mt-4' style={{fontWeight:"bold"}}>$149.00</h3>
           <div className='star mb-3'><FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />

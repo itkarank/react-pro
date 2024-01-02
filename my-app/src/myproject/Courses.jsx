@@ -151,7 +151,7 @@ function Courses(){
         <div className="popular-course overflow-hidden"><Card.Img variant="top" src={Course1} text="Image cap" className='course-img position-relative'/></div>
       <div className='btn-sec w-100 position-absolute justify-content-center mb-4'>
       <Link to='/' className='card-btn1 flex-shrink-0 btn btn-sm btn-primary px-3 border-end'>Read More</Link>
-      <Link to='/' className='card-btn2 flex-shrink-0 btn btn-sm btn-primary px-3 border-start'>Join Now</Link>
+      <Link to='/Contact' className='card-btn2 flex-shrink-0 btn btn-sm btn-primary px-3 border-start'>Join Now</Link>
    </div>
         <h3 className='Dollar mb-0 mt-4' style={{fontWeight:"bold"}}>$149.00</h3>
           <div className='star mb-3'><FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
@@ -175,7 +175,7 @@ function Courses(){
 <div className="popular-course overflow-hidden"><Card.Img variant="top" src={Course2} text="Image cap" className='course-img position-relative'/></div>
       <div className='btn-sec w-100 position-absolute justify-content-center mb-4'>
       <Link to='/' className='card-btn1 flex-shrink-0 btn btn-sm btn-primary px-3 border-end'>Read More</Link>
-      <Link to='/' className='card-btn2 flex-shrink-0 btn btn-sm btn-primary px-3 border-start'>Join Now</Link>
+      <Link to='/Contact' className='card-btn2 flex-shrink-0 btn btn-sm btn-primary px-3 border-start'>Join Now</Link>
    </div>
         <h3 className='Dollar mb-0 mt-4' style={{fontWeight:"bold"}}>$149.00</h3>
           <div className='star mb-3'><FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
@@ -200,7 +200,7 @@ function Courses(){
  <div className="popular-course overflow-hidden"><Card.Img variant="top" src={Course3} text="Image cap" className='course-img position-relative'/></div>
       <div className='btn-sec w-100 position-absolute justify-content-center mb-4'>
       <Link to='/' className='card-btn1 flex-shrink-0 btn btn-sm btn-primary px-3 border-end'>Read More</Link>
-      <Link to='/' className='card-btn2 flex-shrink-0 btn btn-sm btn-primary px-3 border-start'>Join Now</Link>
+      <Link to='/Contact' className='card-btn2 flex-shrink-0 btn btn-sm btn-primary px-3 border-start'>Join Now</Link>
    </div>
         <h3 className='Dollar mb-0 mt-4' style={{fontWeight:"bold"}}>$149.00</h3>
           <div className='star mb-3'><FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
