@@ -7,9 +7,14 @@ import { useState } from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
+import { useSelector} from 'react-redux';
 
 
 function Navigationbar(){
+
+  const cart = useSelector(state => state.cart);
+  const cartItemCount = Array.isArray(cart) ? cart.length : 0;
+
     const [showDropdown, setShowDropdown] = useState(false);
 
     const handleMouseEnter = () => {
@@ -25,8 +30,8 @@ function Navigationbar(){
 
 
 return(
-        <div>
-<Navbar expand="lg" className="menu bg-tertiary sticky-top shadow">
+  <div>
+<Navbar expand="lg" className="menu bg-tertiary fixed-top shadow">
  <Link to='#epwkde' className='navbar-brand'><FaBook className='book-logo'/> eLEARNING</Link>
   <Navbar.Toggle aria-controls="basic-navbar-nav" className="ms-auto" />
   <Navbar.Collapse id="basic-navbar-nav">
@@ -53,7 +58,11 @@ return(
 
  <Link to='/Contact' id='nlink' className={location.pathname === '/Contact' ? 'active-link' : 'inactive-link'}>CONTACT</Link>
 
- <Link>< FaCartPlus className='cart-ico' style={{color:'#181d38', fontSize:'25px', marginTop:'7px'}}/></Link>
+ <div className='cart-batch'>
+ <Link to='/Cart'>< FaCartPlus className='cart-ico' style={{color:'#181d38', fontSize:'25px', marginTop:'7px'}}/>
+ <div className="badge py-1" style={{ color: 'white' }}>{cartItemCount}</div>
+</Link>
+ </div>
 
   </Nav>
     </Navbar.Collapse>

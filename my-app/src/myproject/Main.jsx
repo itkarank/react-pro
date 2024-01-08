@@ -49,7 +49,8 @@ import { FaArrowUpLong } from "react-icons/fa6";
 import 'animate.css';
 import WOW from 'wowjs';
 import { useEffect } from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../action/cartAction';
 
 
 
@@ -62,6 +63,10 @@ function Main() {
     const wow = new WOW.WOW();
     wow.init();
   }, []);
+
+  const dispatch = useDispatch();
+  const courses1 = useSelector(state => state.courses1);
+
   
   const testimonials = [
     { id: 1, imageSrc: Testimonial1, name:'Client Name', profession:'Profession', details:'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.' },
@@ -108,7 +113,7 @@ function Main() {
          <h1 className='display-3 text-white animated slideInDown'>The Best Online</h1>
           <h1 >Learning Platform</h1>  
           <p>Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum <br /> et diam justo clita et kasd rebum sea sanctus eirmod elitr. </p>
-             <button className='Read-btn py-md-3 px-md-5 me-3 animated slideInLeft'><Link to='/' className='carous-btnr'>Read More</Link></button>
+             <button className='Read-btn py-md-3 px-md-5 me-3 animated slideInLeft'><Link to='/Readmore' className='carous-btnr'>Read More</Link></button>
              <button className='Join-btn py-md-3 px-md-5 me-3 animated slideInRight'><Link to='/Contact' className='carous-btnj'>Join Now</Link></button>
        </div>
         </Carousel.Caption>
@@ -123,7 +128,7 @@ function Main() {
           <h1 >Get Educated Online</h1>
           <h1 >From Your Home</h1>
           <p>Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum <br /> et diam justo clita et kasd rebum sea sanctus eirmod elitr. </p>
-             <button className='Read-btn py-md-3 px-md-5 me-3'><Link to='/' className='carous-btnr'>Read More</Link></button>
+             <button className='Read-btn py-md-3 px-md-5 me-3'><Link to='/Readmore' className='carous-btnr'>Read More</Link></button>
              <button className='Join-btn py-md-3 px-md-5 me-3'><Link to='/Contact' className='carous-btnj'>Join Now</Link></button>
         </Carousel.Caption>
         </div>
@@ -202,7 +207,7 @@ function Main() {
         <Col>< FaArrowRight className='Abticon'/> International Certificate</Col>
       </Row>
      </div>
-    <Link to='/' className='abt-bt mt-3 wow fadeInUp' data-wow-delay="0.1s" style={{animationDelay:'0.1s',animationName:'fadeInUp', visibility:'visible'}} >Read More</Link>
+    <Link to='/Readmore' className='abt-bt mt-3 wow fadeInUp' data-wow-delay="0.1s" style={{animationDelay:'0.1s',animationName:'fadeInUp', visibility:'visible'}} >Read More</Link>
         </Col>
       </Row>
      
@@ -258,25 +263,30 @@ function Main() {
   </div>
 
                             {/* SECTION -4 */}
-
-
-<div className='section-4'>
-  <Container className='sec4-con'>
-    <div className='sec4-title wow fadeInUp' data-wow-delay="0.1s" style={{animationDelay:'0.1s',animationName:'fadeInUp', visibility:'visible'}}>
+  <div className='section-4 '>
+  <Container className='sec4-con' >
+<div className='sec4-title wow fadeInUp text-center' data-wow-delay="0.1s" style={{animationDelay:'0.1s', animationName:'fadeInUp', visibility:'visible'}}>
       <div className='d-inline position-relative'><div className='course-line3 position-absolute'></div><div className='course-line4 position-absolute'></div><h6 className='sec4-h6 mb-0'>COURSES</h6><div className='course-line1 position-absolute'></div><div className='course-line2 position-absolute'></div></div>
-         <h1 className='sec4-h1 mt-1'>Popular Courses</h1>  </div>
-    <Row g={4}>
-<Col lg={4} md={6} className='wow fadeInUp' data-wow-delay="0.1s" style={{animationDelay:'0.1s',animationName:'fadeInUp', visibility:'visible'}}>
-      <Card className='sec4-cards'>
-        <div className="popular-course overflow-hidden"><Card.Img variant="top" src={Course1} text="Image cap" className='course-img position-relative'/></div>
+      <h1 className='sec4-h1 mt-1'>Popular Courses</h1>  </div>
+      <ul className="course-list mx-0 px-0">
+
+        {courses1.map(course => (
+          <li key={course.id} className="course-card">
+  <Row g={4} className='popularc'>
+<Col lg={4} md={6} className='cards-col wow fadeInUp mx-2 ' data-wow-delay="0.1s" style={{animationDelay:'0.1s', animationName:'fadeInUp', visibility:'visible', width:'100%'}}>
+    <Card className='sec4-cards text-center'>
+    <div className="popular-course overflow-hidden">
+    <img src={course.image} alt={course.name} className="course-img position-reletive img-fluid w-100" /></div>
       <div className='btn-sec w-100 position-absolute justify-content-center mb-4'>
-      <Link to='/' className='card-btn1 flex-shrink-0 btn btn-sm btn-primary px-3 border-end'>Read More</Link>
+      <Link to='/Readmore' className='card-btn1 flex-shrink-0 btn btn-sm btn-primary px-3 border-end'>Read More</Link>
       <Link to='/Contact' className='card-btn2 flex-shrink-0 btn btn-sm btn-primary px-3 border-start'>Join Now</Link>
    </div>
-        <h3 className='Dollar mb-0 mt-4' style={{fontWeight:"bold"}}>$149.00</h3>
+        <h3 className='course-price mt-2' style={{fontWeight:"bold"}}>₹{course.price}</h3>
           <div className='star mb-3'><FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
-            <span className='rate'> (123)</span></div>
-        <h5 className='c-text mb-4 m-2 px-2'> Web Design & Development Course for Beginners</h5>
+            <span className='rate'> (4.5)</span></div>
+            <div className="course-details ">
+                <span className="course-name ">{course.name}</span><br />
+                <button className='addtocart-btn mt-3 mb-3'style={{width:"70%"}} onClick={() => dispatch(addToCart(course))}>Add to Cart</button> </div>
     <div className='card-footer border-top d-flex p-0'>
       <small className="c-footer flex-fill text-center border-end py-2">
          <FaUserTie className='Ico' /> John Deo
@@ -290,59 +300,15 @@ function Main() {
         </div>
      </Card>
   </Col>
-<Col lg={4} md={6} className='wow fadeInUp' data-wow-delay="0.3s" style={{animationDelay:'0.3s',animationName:'fadeInUp', visibility:'visible'}}>
-<Card className='sec4-cards'>
-<div className="popular-course overflow-hidden"><Card.Img variant="top" src={Course2} text="Image cap" className='course-img position-relative'/></div>
-      <div className='btn-sec w-100 position-absolute justify-content-center mb-4'>
-      <Link to='/' className='card-btn1 flex-shrink-0 btn btn-sm btn-primary px-3 border-end'>Read More</Link>
-      <Link to='/Contact' className='card-btn2 flex-shrink-0 btn btn-sm btn-primary px-3 border-start'>Join Now</Link>
-   </div>
-        <h3 className='Dollar mb-0 mt-4' style={{fontWeight:"bold"}}>$149.00</h3>
-          <div className='star mb-3'><FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
-            <span className='rate'> (123)</span></div>
-        <h5 className='c-text mb-4 m-2 px-2'> Web Design & Development Course for Beginners</h5>
-    <div className='card-footer border-top d-flex p-0'>
-      <small className="c-footer flex-fill text-center border-end py-2">
-         <FaUserTie className='Ico' /> John Deo
-         </small>
-     <small className="c-footer flex-fill text-center border-end py-2">
-         <FaClock className='Ico'/> 1.49 Hrs
-         </small>
-     <small className="c-footer flex-fill text-center border-end py-2">
-         <FaUser className='Ico'/> 30 Students
-         </small>
-        </div>
-     </Card>
-  </Col>
+  </Row>
 
- <Col lg={4} md={6} className='wow fadeInUp' data-wow-delay="0.5s" style={{animationDelay:'0.5s',animationName:'fadeInUp', visibility:'visible'}}>
- <Card className='sec4-cards'>
- <div className="popular-course overflow-hidden"><Card.Img variant="top" src={Course3} text="Image cap" className='course-img position-relative'/></div>
-      <div className='btn-sec w-100 position-absolute justify-content-center mb-4'>
-      <Link to='/' className='card-btn1 flex-shrink-0 btn btn-sm btn-primary px-3 border-end'>Read More</Link>
-      <Link to='/Contact' className='card-btn2 flex-shrink-0 btn btn-sm btn-primary px-3 border-start'>Join Now</Link>
-   </div>
-        <h3 className='Dollar mb-0 mt-4' style={{fontWeight:"bold"}}>$149.00</h3>
-          <div className='star mb-3'><FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
-            <span className='rate'> (123)</span></div>
-        <h5 className='c-text mb-4 m-2 px-2'> Web Design & Development Course for Beginners</h5>
-    <div className='card-footer border-top d-flex p-0'>
-      <small className="c-footer flex-fill text-center border-end py-2">
-         <FaUserTie className='Ico' /> John Deo
-         </small>
-     <small className="c-footer flex-fill text-center border-end py-2">
-         <FaClock className='Ico'/> 1.49 Hrs
-         </small>
-     <small className="c-footer flex-fill text-center border-end py-2">
-         <FaUser className='Ico'/> 30 Students
-         </small>
-        </div>
-     </Card>
- </Col>
-
-    </Row>
-  </Container>
+      </li>
+        ))}
+      </ul>
+</Container>
 </div>
+
+
 
                               {/* SECTION-5 */}
 
