@@ -289,7 +289,7 @@ function Main() {
                 <button className='addtocart-btn mt-3 mb-3'style={{width:"70%"}} onClick={() => dispatch(addToCart(course))}>Add to Cart</button> </div>
     <div className='card-footer border-top d-flex p-0'>
       <small className="c-footer flex-fill text-center border-end py-2">
-         <FaUserTie className='Ico' /> John Deo
+         <FaUserTie className='Ico' /> {course.instructor}
          </small>
      <small className="c-footer flex-fill text-center border-end py-2">
          <FaClock className='Ico'/> 1.49 Hrs
