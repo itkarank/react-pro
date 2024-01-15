@@ -16,5 +16,7 @@ COPY . .
 # Expose the port that the app will run on
 EXPOSE 8070
 
+ENV APP_HOME /usr/src/app
+
 # Define the command to run your application
 CMD ["npm", "start"]
