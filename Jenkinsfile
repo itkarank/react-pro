@@ -15,7 +15,7 @@ pipeline {
                     
                     
                         
-                sh "docker build -t priya-pro -f Dockerfile ."
+                sh "sudo docker build -t priya-pro -f Dockerfile ."
                         
                     }
                 }
