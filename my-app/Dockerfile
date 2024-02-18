@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a base image
-FROM node:14-alpine
+FROM node:latest
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Expose the port that the app will run on
-EXPOSE 8070
+EXPOSE 3000
 
 # Define the command to run your application
 CMD ["npm", "start"]
